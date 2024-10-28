@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Verificar si el entorno de escritorio es dwm
+if [ "$DESKTOP_SESSION" = "dwm" ]; then
+    echo "Entorno de escritorio: dwm"
+    while xsetroot -name "`date`"
+    do
+    	sleep 1
+    done &
+    exec dwm
+    
+    
+    # Agrega aquí otros comandos que desees ejecutar
+else
+    echo "El entorno de escritorio no es dwm. No se ejecutan comandos."
+fi
+
